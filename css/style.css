@@ -190,21 +190,40 @@ body.lock {
   border-bottom: 1px solid #ffffff;
   display: flex;
   margin: 0 0 15px 0;
-  position: relative;
 }
 
 .form.error {
   border-bottom: 1px solid rgba(255, 0, 0, 0.8);
 }
 
-.form.well::after {
-  content: "Thanks you";
-  position: absolute;
+.form__result {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
   left: 0;
-  bottom: -17.5px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(39, 39, 39, 0.8);
+  z-index: 9999;
+  color: #fff;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 14px;
+  line-height: 133%;
+  transition: opacity 0.3s;
+}
+
+.form__result span {
+  background-color: #272727;
+  padding: 15px 30px;
+  border-radius: 25px;
+}
+
+.form__result.well {
+  opacity: 1;
+  visibility: visible;
 }
 
 .email {
@@ -1224,6 +1243,10 @@ footer .menu__body-title {
     font-size: calc(34px + 14 * (100vw / 1440));
   }
 
+  .form__result {
+    font-size: calc(20px + 20 * (100vw / 1440));
+  }
+
   .item-name {
     font-size: calc(30px + -12 * (100vw / 1440));
   }
@@ -1315,6 +1338,10 @@ footer .menu__body-title {
 @media (min-width: 1116px) {
   .title {
     font-size: 48px;
+  }
+
+  .form__result {
+    font-size: 40px;
   }
 
   .item-name {
@@ -1625,6 +1652,10 @@ footer .menu__body-title {
 @media (max-width: 1px) {
   .title {
     font-size: calc(34px + 23.8 * ((100vw - 320px) / 1440));
+  }
+
+  .form__result {
+    font-size: calc(20px + 34 * ((100vw - 320px) / 1440));
   }
 
   .item-name {
