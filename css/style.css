@@ -570,6 +570,8 @@ body.lock {
 
 .header .start__about {
   text-align: right;
+  width: 29.86vw;
+  max-width: 430px;
 }
 
 .header .menu {
@@ -1104,11 +1106,17 @@ main .about__container {
 
 main .about__image {
   flex: 1 1 50%;
+  overflow: hidden;
 }
 
 main .about__image img {
   width: 100%;
   height: auto;
+  transition: all 0.3s;
+}
+
+main .about__image:hover img {
+  transform: scale(1.1);
 }
 
 main .about__content {
@@ -1404,6 +1412,12 @@ footer .menu__body-title {
 
   .header .header__items {
     gap: 50px;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+  .header .header__items li {
+    transform: scale(1.25);
   }
 
   .header .start__content {
@@ -1442,6 +1456,11 @@ footer .menu__body-title {
 
   .header .start__language button.active {
     color: #fff;
+  }
+
+  .header .start__about {
+    width: 100%;
+    max-width: 100%;
   }
 
   .header .menu {
@@ -1598,15 +1617,6 @@ footer .menu__body-title {
 }
 
 @media (max-width: 480px) {
-  .header .header__items {
-    justify-content: center;
-    margin: 30px auto;
-  }
-
-  .header .header__items li {
-    transform: scale(1.25);
-  }
-
   main .catalog__item-image {
     padding: 0 0 15px 0;
   }
